@@ -1,5 +1,5 @@
 import config from "../config/config";
-import {Client, ID, Account, Databases, Storage, Query, Client} from "appwrite";
+import {Client, ID, Account, Databases, Storage, Query} from "appwrite";
 
 class Configuration{
      client = new Client()
@@ -50,7 +50,8 @@ class Configuration{
 
      async getPost(slug){
         try {
-            await this.databases.getDocument(
+            
+           return await this.databases.getDocument(
                 config.appwriteDatabaseId, // databaseId
                 config.appwriteCollectionId, // collectionId
                 slug, // documentId
@@ -63,13 +64,26 @@ class Configuration{
 
      async getPosts(queries=[Query.equal("status","active")]){
         try {
-            await this.databases.listDocuments(
+           return await this.databases.listDocuments(
                 config.appwriteDatabaseId, // databaseId
                 config.appwriteCollectionId, // collectionId
                 queries
             );
         } catch (error) {
             console.log("Error occured while getPosts", error);
+            return null;
+        }
+     }
+
+     async deletePost(documentId){
+        try {
+            return await this.databases.deleteDocument(
+                config.appwriteDatabaseId, // databaseId
+                config.appwriteCollectionId, // collectionId
+                documentId, // documentId
+            );
+        } catch (error) {
+            console.log("Error occured while deletePost",error);
             return null;
         }
      }
@@ -102,7 +116,7 @@ class Configuration{
         }
      }
 
-     async getFilePreview(fileId){
+      getFilePreview(fileId){
         try {
             return  this.bucket.getFilePreview(
                 config.appwriteBucketId,
