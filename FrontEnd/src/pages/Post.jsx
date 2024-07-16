@@ -4,6 +4,8 @@ import configuration from "../appwrite/configuration";
 import { Button, Container } from "../components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
 
 export default function Post() {
@@ -36,11 +38,15 @@ export default function Post() {
     return post ? (
         <div className="py-8">
             <Container>
+            <Box sx={{ borderColor: 'primary.main' }}>
+      
+    
+            
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2 ">
                     <img
                         src={configuration.getFilePreview(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-xl rounded-lg border-2 border-gray-300"
+                        className="rounded-xl  border-2 border-gray-300 w-3/5 h-3/5"
 
                     />
 
@@ -63,6 +69,8 @@ export default function Post() {
                 <div className="browser-css">
                     {parse(post.content)}
                     </div>
+                    <Paper elevation={3} />
+                    </Box>
             </Container>
         </div>
     ) : null;

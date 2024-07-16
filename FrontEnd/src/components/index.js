@@ -11,7 +11,8 @@ import Signup  from "./PostForm/Signup.jsx";
 import RTE from "./Fields/RTE.jsx";
 import PostForm from "./PostForm/PostForm.jsx"
 import Protected from "./PostForm/AuthLayout.jsx";
-
+import ThemeBtn from "./Theme/ThemeBtn.jsx";
+import Support from "./Support/Support.jsx"
 
 export {Header,
         Footer,
@@ -26,4 +27,6 @@ export {Header,
         RTE,
         PostForm,
         Protected,
+        ThemeBtn,
+        Support,
     };

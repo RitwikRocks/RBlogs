@@ -3,6 +3,7 @@ import configuration from '../appwrite/configuration'
 import { PostCard , Container} from '../components'
 
 
+
 const AllPosts = () => {
   const[posts,setPosts] = useState([]);
   useEffect(()=>{

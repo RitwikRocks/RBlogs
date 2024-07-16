@@ -5,6 +5,7 @@ import appwriteService from '../../appwrite/configuration.js'
 import { useNavigate , Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+import CloudUploadIcon from '@mui/icons-material/AccessAlarm';
 
 export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
@@ -34,6 +35,7 @@ export default function PostForm({ post }) {
     }else{
         const file = data.image[0]?await appwriteService.uploadFile(data.image[0]):null;
         if(file){
+            console.log(file.$id);
             const fileId = file.$id;
             data.featuredImage = fileId;
             const dbPost = await appwriteService.createPost({...data,userId:userData.$id});
@@ -110,7 +112,8 @@ export default function PostForm({ post }) {
             className="mb-4"
             {...register("status", { required: true })}
         />
-        <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+       
+        <Button component="label"   tabIndex={-1} type="submit"  startIcon={<CloudUploadIcon />} className="w-full">
             {post ? "Update" : "Submit"}
         </Button>
     </div>

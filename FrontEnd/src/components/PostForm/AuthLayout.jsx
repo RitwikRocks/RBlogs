@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 
 export default function Protected({children, authentication = true}) {
@@ -26,5 +28,13 @@ export default function Protected({children, authentication = true}) {
         setLoader(false)
     }, [authStatus, navigate, authentication])
 
-  return loader ? <h1>Loading...</h1> : <>{children}</>
+  return loader ? 
+  <div className="bg-black w-full h-screen">
+  <div className='absolute inset-0 w-4 h-4 mx-auto my-auto'>
+  <Box sx={{ height:340}}>
+      <CircularProgress />
+    </Box>
+ </div>
+  </div>
+  : <>{children}</>
 }

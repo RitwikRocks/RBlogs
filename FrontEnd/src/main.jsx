@@ -4,10 +4,11 @@ import App from './App.jsx'
 import {Provider} from 'react-redux'
 import store from './store/store.js'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import {Login} from "./components/index.js"
+import {Login, Support} from "./components/index.js"
 import AuthLayout from './components/PostForm/AuthLayout.jsx'
 import {Home,EditPost,AllPosts,Post,SignUp,AddPost} from "./pages/index.js"
 import './index.css'
+import About from './components/About.jsx'
 
 const router = createBrowserRouter([
     {
@@ -64,6 +65,14 @@ const router = createBrowserRouter([
               path: "/post/:slug",
               element: <Post />,
           },
+          {
+            path: "/about",
+            element: <About/>
+          },
+          {
+            path: "/support",
+            element: <Support/>
+          }
       ],
   },
   ])
