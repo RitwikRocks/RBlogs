@@ -88,10 +88,10 @@ function Home() {
             <h2  className="text-lg font-bold leading-snug text-centery">Create a unique and beautiful blog easily.</h2>
             </div>
             <br/>
-            <Paper elevation={12}>
+
             <div
   id="carouselExampleSlidesOnly"
-  className="relative py-9 shadow-2xl"
+  className="relative py-9"
   data-twe-carousel-init
   data-twe-ride="carousel">
   
@@ -104,13 +104,12 @@ function Home() {
       data-twe-carousel-active>
       <img
         src={image}
-        className="object-fit:scale-down max-h-[500px]  drop-shadow-md rounded-md m-auto"
+        className="object-fill:scale-down max-h-[500px]  rounded-md m-auto"
         alt="Blog" />
     </div>
   </div>
   
 </div>
-</Paper>
         </div>
         
     )

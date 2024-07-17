@@ -12,11 +12,10 @@ import PostForm from "./PostForm/PostForm"
 import Protected from "./PostForm/AuthLayout";
 import ThemeBtn from "./Theme/ThemeBtn";
 import Support from "./Support/Support"
-import Container from "./container/Container.jsx";
+
 
 export {Header,
         Footer,
-        Container,
         LogoutBtn,
         Input,
         Select,

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import configuration from "../appwrite/configuration";
-import { Button, Container } from "../components";
+import { Button } from "../components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import Container from '../components/container/Container'
 
 
 export default function Post() {
