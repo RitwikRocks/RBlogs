@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import  appwriteService from "../appwrite/configuration";
-import {Container, PostCard} from '../components'
 import { useSelector } from 'react-redux';
 import {IMG1,IMG2,IMG3,IMG5,IMG6,IMG7,IMG8,IMG9,IMG10,IMG11} from "../Blog/index"
 import Paper from '@mui/material/Paper';

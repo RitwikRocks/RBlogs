@@ -5,7 +5,6 @@ import {
   FaGithubSquare,
   FaInstagram,
 } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
 import { BiLogoGmail } from "react-icons/bi";
 
 
