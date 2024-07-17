@@ -1,6 +1,5 @@
 import Header from "./Header/Header.jsx";
 import Footer from "./Footer/Footer";
-import Container from "./container/Container.jsx";
 import LogoutBtn from "./Header/LogoutBtn";
 import Input from "./Fields/Input";
 import Select from "./Fields/Select";
@@ -13,6 +12,7 @@ import PostForm from "./PostForm/PostForm"
 import Protected from "./PostForm/AuthLayout";
 import ThemeBtn from "./Theme/ThemeBtn";
 import Support from "./Support/Support"
+import Container from "./container/Container.jsx";
 
 export {Header,
         Footer,
