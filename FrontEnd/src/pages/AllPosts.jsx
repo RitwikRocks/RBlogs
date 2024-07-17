@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import configuration from '../appwrite/configuration'
 import { PostCard} from '../components'
-import Container from '../components/container/Container'
+import Container from '../components/container/ContainerItem'
 
 
 

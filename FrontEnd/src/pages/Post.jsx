@@ -6,7 +6,7 @@ import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Container from '../components/container/Container'
+import Container from '../components/container/ContainerItem'
 
 
 export default function Post() {
