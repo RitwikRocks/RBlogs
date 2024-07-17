@@ -1,18 +1,18 @@
 import Header from "./Header/Header.jsx";
 import Footer from "./Footer/Footer";
 import Container from "./Container/Container";
-import LogoutBtn from "./Header/LogoutBtn.jsx";
-import Input from "./Fields/Input.jsx";
-import Select from "./Fields/Select.jsx";
-import PostCard from "./PostForm/PostCard.jsx";
-import Button from "./Fields/Button.jsx"
-import Login from "./PostForm/Login.jsx"
-import Signup  from "./PostForm/Signup.jsx";
-import RTE from "./Fields/RTE.jsx";
-import PostForm from "./PostForm/PostForm.jsx"
-import Protected from "./PostForm/AuthLayout.jsx";
-import ThemeBtn from "./Theme/ThemeBtn.jsx";
-import Support from "./Support/Support.jsx"
+import LogoutBtn from "./Header/LogoutBtn";
+import Input from "./Fields/Input";
+import Select from "./Fields/Select";
+import PostCard from "./PostForm/PostCard";
+import Button from "./Fields/Button"
+import Login from "./PostForm/Login"
+import Signup  from "./PostForm/Signup";
+import RTE from "./Fields/RTE";
+import PostForm from "./PostForm/PostForm"
+import Protected from "./PostForm/AuthLayout";
+import ThemeBtn from "./Theme/ThemeBtn";
+import Support from "./Support/Support"
 
 export {Header,
         Footer,
