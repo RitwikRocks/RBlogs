@@ -104,7 +104,7 @@ function Home() {
       data-twe-carousel-active>
       <img
         src={image}
-        className="object-fill:scale-down max-h-[500px]  rounded-md m-auto"
+        className="object-fill:scale-down max-h-[500px]  drop-shadow-md rounded-md m-auto"
         alt="Blog" />
     </div>
   </div>
