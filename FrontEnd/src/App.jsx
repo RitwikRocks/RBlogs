@@ -60,7 +60,7 @@ function App() {
     <div className={`min-h-screen flex flex-wrap content-between ${themeColor}`}>
       <div className='w-full block'>
         <Header />
-        <div className='border-none border-x-4 border-y-2 border-zinc-950 hover:border-solid rounded-lg'>
+        <div className='border-none border-x-4 border-y-2 border-zinc-950 hover:border-solid rounded-sm'>
         <main>
         <Outlet />
         </main>

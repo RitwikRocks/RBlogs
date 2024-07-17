@@ -1,22 +1,49 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {Input, Button } from '../index'
+import { useSelector } from 'react-redux';
+
+
+import Paper from '@mui/material/Paper';
+
 
 function Support() {
+  const themeType = useSelector((state)=> state.theme.themeType);
+  const [textColor, setTextColor]= useState("text-black");
+  const[hoverColor, setHoverColor] = useState("hover:bg-zinc-800");
+  const[backgroundColor, setBackgroundColor] = useState("bg-white");
+
+  useEffect(()=>{
+     if(themeType=="light")
+     {
+      setTextColor("text-black");
+      setHoverColor("hover:bg-rose-500")
+      setBackgroundColor("bg-slate-100");
+      
+     }else{
+      setTextColor("text-slate-300");
+      setHoverColor("hover:bg-zinc-500")
+      setBackgroundColor("bg-stone-900");
+     }
+  },[themeType]);
+  
   return (
-    <section className='item-center'>
-    <div>
-      <h1 className="text-3xl">Get In Touch</h1>
-      <h2>Contact Me</h2>
-      <p className="text-lg">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, odit.
+    
+    <section className={`flex items-center justify-center w-full p-10 ${textColor}`}>
+       <Paper elevation={12}>
+    <div className={`mx-auto w-full max-w-lg ${backgroundColor} rounded-xl p-10`}>
+      <h1 className={`text-center ${textColor} text-3xl font-bold leading-tight`}>Get In Touch</h1>
+      <h2 className="text-center text-lg py-2 font-thin leading-tight">Contact Admin</h2>
+      <p className="mt-2 text-center  ">
+        If you are facing any difficulty or have forgotten password Write Your Query here.
       </p>
-    </div>
-    <form className="contact--form--container">
-      <div className="container">
-        <label htmlFor="first-name" className="contact--label">
-          <span className="text-md">First Name</span>
-          <input
+    
+    <form className="mt-8">
+      <div className="space-y-5">
+        <label htmlFor="first-name" className="mb-4">
+          <span className="text-md">First Name  </span>
+          <Input
             type="text"
-            className="contact--input text-md"
+            className="bg-slate-300"
             name="first-name"
             id="first-name"
             required
@@ -24,9 +51,9 @@ function Support() {
         </label>
         <label htmlFor="last-name" className="contact--label">
           <span className="text-md">Last Name</span>
-          <input
+          <Input
             type="text"
-            className="contact--input text-md"
+            className="mb-4 bg-slate-300"
             name="last-name"
             id="last-name"
             required
@@ -34,9 +61,9 @@ function Support() {
         </label>
         <label htmlFor="email" className="contact--label">
           <span className="text-md">Email</span>
-          <input
+          <Input
             type="email"
-            className="contact--input text-md"
+           className="mb-4 bg-slate-300"
             name="email"
             id="email"
             required
@@ -44,41 +71,48 @@ function Support() {
         </label>
         <label htmlFor="phone-number" className="contact--label">
           <span className="text-md">phone-number</span>
-          <input
+          <Input
             type="number"
-            className="contact--input text-md"
+            className="mb-4 bg-slate-300"
             name="phone-number"
             id="phone-number"
             required
           />
         </label>
       </div>
-      <label htmlFor="choode-topic" className="contact--label">
-        <span className="text-md">Choose a topic</span>
-        <select id="choose-topic" className="contact--input text-md">
+      <label htmlFor="choose-topic" className="contact--label">
+        <span className="font-bold">Choose a topic:  </span>
+        <t/>
+        <select id="choose-topic" className={`mb-4 bg-slate-300 text-black`}>
           <option>Select One...</option>
-          <option>Item 1</option>
-          <option>Item 2</option>
-          <option>Item 3</option>
+          <option>Forgot Password</option>
+          <option>Inappropriate Post</option>
+          <option>Not able to Post</option>
+          <option>Others</option>
         </select>
       </label>
-      <label htmlFor="message" className="contact--label">
+      <br/>
+      <label htmlFor="message" className="font-medium">
         <span className="text-md">Message</span>
+      <br/>
         <textarea
-          className="contact--input text-md"
+          className="block p-2.5 w-full text-sm text-gray-900 bg-slate-300 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           id="message"
           rows="8"
           placeholder="Type your message..."
         />
+      <br/>
       </label>
       <label htmlFor="checkboc" className="checkbox--label">
-        <input type="checkbox" required name="checkbox" id="checkbox" />
-        <span className="text-sm">I accept the terms</span>
+        <input type="checkbox" required name="checkbox" id="checkbox" className="border-2 border-black"/>
+        <span className="text-sm font-bold px-3">I accept the terms</span>
       </label>
       <div>
-        <button className="btn btn-primary contact--form--btn">Submit</button>
+        <Button className="w-full ${buttonColor} hover:text-blue-800">Submit</Button>
       </div>
     </form>
+    </div>
+    </Paper>
   </section>
   );
 }

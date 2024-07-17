@@ -63,7 +63,7 @@ function  Header () {
         setTextColor("text-white");
         dispatch(changeTheme(theme));
       }
-        console.log(headerColor)
+
    },[theme])
 
 

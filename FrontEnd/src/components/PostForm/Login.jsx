@@ -51,7 +51,7 @@ function Login() {
 
 
   return (
-    <div className='flex items-center justify-center w-full p-10 '>
+    <div className='flex items-center justify-center w-full p-16 '>
             <Box
       sx={{
         display: 'flex',
