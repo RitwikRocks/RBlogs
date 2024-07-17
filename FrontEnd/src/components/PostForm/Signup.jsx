@@ -73,7 +73,7 @@ function Signup() {
         '& > :not(style)': {
           m: 1,
           width: 480,
-          height: 500,
+          height: 520,
         },
       }}
     >

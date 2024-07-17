@@ -59,7 +59,7 @@ function Login() {
         '& > :not(style)': {
           m: 1,
           width: 480,
-          height: 440,
+          height: 480,
         },
       }}
     >
