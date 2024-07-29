@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import configuration from '../appwrite/configuration'
 import { PostCard} from '../components'
 import Container from '../components/container/ContainerItem'
-import appwriteService from '../appwrite/auth.js'
+import { useSelector } from 'react-redux'
 
-
-const currentUser = await appwriteService.getCurrentUser();
-const currentUserId = currentUser.$id;
 
 const AllPosts = () => {
+  const userData = useSelector(state=>state.auth.userData);
+
+  const currentUserId = userData.$id;
+  console.log(currentUserId);
   const[posts,setPosts] = useState([]);
   useEffect(()=>{
     configuration.getPosts([])

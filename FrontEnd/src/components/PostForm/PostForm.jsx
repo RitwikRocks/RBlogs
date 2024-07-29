@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import CloudUploadIcon from '@mui/icons-material/AccessAlarm';
 
 export default function PostForm({ post }) {
+    console.log(post);
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",

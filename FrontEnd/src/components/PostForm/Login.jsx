@@ -41,7 +41,7 @@ function Login() {
                 navigate("/")
             }else{
                 setError("Your email or password is not Correct");
-                console.log(session);
+                
             }
         } catch (error) {
             setError("service is temporarily unavailable. we are sorry for the inconvenience")
