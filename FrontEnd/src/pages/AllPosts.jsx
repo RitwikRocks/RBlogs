@@ -2,18 +2,28 @@ import React, { useState, useEffect } from 'react'
 import configuration from '../appwrite/configuration'
 import { PostCard} from '../components'
 import Container from '../components/container/ContainerItem'
+import appwriteService from '../appwrite/auth.js'
 
 
+const currentUser = await appwriteService.getCurrentUser();
+const currentUserId = currentUser.$id;
 
 const AllPosts = () => {
   const[posts,setPosts] = useState([]);
   useEffect(()=>{
     configuration.getPosts([])
     .then((posts)=>{
-        console.log(posts);
         if(posts){
-          console.log(posts);
-            setPosts(posts.documents);
+          let activeposts =[];
+          for (let index = 0; index < posts.documents.length; index++) {
+            if(posts.documents[index].status==="active" || posts.documents[index].userId==currentUserId){
+              activeposts.push(posts.documents[index]);
+            }
+            
+          }
+             console.log(activeposts);
+             console.log(posts);
+            setPosts(activeposts);
         }
     })
   },[]);
@@ -23,6 +33,7 @@ const AllPosts = () => {
     <Container>
         <div className='flex flex-wrap'>
             {posts.map((post) => (
+
                 <div key={post.$id} className='p-2 w-1/4'>
                     <PostCard {...post} />
                 </div>
